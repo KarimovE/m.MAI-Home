@@ -1,0 +1,41 @@
+﻿<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Reports </title>
+    <link rel="stylesheet" href="D:\Hackathon\style.css">
+</head>
+
+<body>
+    <h1 class="heading"> Monthly Reports </h1>
+
+    <!-- <img src="3644100.jpg" alt="no image"> -->
+    <div class="row justify-content-center">
+        <a asp-controller="Limitation" asp-action="Index" class="btn btn-success col-2 m-2"> Make Your Limitation</a>
+        <a asp-controller="Forecast" asp-action="Index" class="btn btn-success col-2 m-2"> Get Your Forecast</a>
+    </div>
+    <div class="row sections">
+        <div class="col-6">
+          <img class="internal_image" src="./images/newplot (3).png" alt="picture_1" style="width:75%" >
+          <h5 id = 'text'>Figure 1. Montly electricty consumption allocation per category</h5>
+        </div>
+        <div class="col-6">
+          <img class="internal_image" src="./images/newplot (4).png" alt="picture_1" style="width:75%">
+          <h5 id = 'text'>Figure 2. Montly electricty consumption allocation per item </h5>
+        </div>
+    </div>
+
+    <div class="row sections">
+      <div class="col-6">
+        <img class="internal_image" src="./images/D.jpg" alt="picture_1" style="width:75%">
+            <h5 id='text'>Figure 3. Montly electricty consumption allocation per item </h5>
+      </div>
+      <div class="col-6">
+        <img class="internal_image" src="./images/A.jpg" alt="picture_1" style="width:75%" >
+        <h5 id = 'text'>Figure 4. Comparison with the previous month </h5>
+      </div>
+    </div>
+</body>
+
+</html>

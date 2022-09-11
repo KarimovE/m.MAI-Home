@@ -1,0 +1,48 @@
+﻿@{
+    ViewData["Title"] = "Make Your Limitation";
+}
+
+@*@model Blog
+    @{
+    ViewData["Title"] = "Create";
+    }*@
+
+<div style="display: flex; justify-content: center; flex-direction: column; align-items: center" class="row align-items-start">
+    <h1 style="text-align: left; margin-bottom: 20px; color: #205C06">@ViewData["Title"]</h1>
+    <div class="col-6 grid-margin stretch-card">
+        <div style="border-radius: 25px" class="card">
+            <div class="card-body">
+                <div class="text-danger" asp-validation-summary="ModelOnly"></div>
+                <form style="border-radius: 40px" class="forms-sample" method="post" enctype="multipart/form-data">
+                    <div style="margin-top: 30px" class="form-group">
+                        <label style="margin-5px; font-weight:500; font-size: 20px">Start time</label>
+                        <input class="form-control" type="date" id="appt" name="appt" required>
+                        <span class="text-danger"></span>
+                    </div>
+                    <div style="margin-top: 30px" class="form-group">
+                        <label style="margin-5px; font-weight:500; font-size: 20px">End time</label>
+                        <input class="form-control" type="date" id="appt" name="appt" required>
+                        <span class="text-danger"></span>
+                    </div>
+                                        <div style="margin-top: 30px" class="form-group">
+                        <label style="margin-5px; font-weight:500; font-size: 20px">Budget Limit ₼  </label>
+<input type="number" min="0" max="10000" step="1" name="Broker_Fees" id="broker_fees" required="required">
+                        <span class="text-danger"></span>
+                    </div>
+                    <div style="justify-content: space-around" class="row">
+                        <a style="margin-top: 30px; background-color: blue; color: white" class="btn btn-light col-2" asp-controller="Expected" asp-action="Index">Submit</a>
+                                           <a style="margin-top: 30px; background-color: gray; color: white" class="btn btn-light col-2" asp-controller="Home" asp-action="Index">Cancel</a>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+

@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - HackatonProject</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/HackatonProject.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <header id="ourHeader" class="bg-secondary">
+        <nav class="bg-secondary navbar navbar-expand-sm navbar-toggleable-sm border-bottom box-shadow mb-3 text-white">
+            <div class="container-fluid">
+                <a class="text-white text-decoration-none mr-5 px-5" style="font-size: 45px; font-weight: bold; font-style: italic; font-family: Comic Sans MS;" asp-area="" asp-controller="Home" asp-action="Index">
+                    <img style="width: 78px; height: 63px; border-radius: 10px; " src="~/images/WhatsApp Image 2022-09-09 at 23.05.37.jpeg"/>
+                    m.AI Home</a>
+                <div class="bg-secondary navbar-collapse collapse d-sm-inline-flex justify-content-between ml-5 pl-5">
+                    <ul class="navbar-nav flex-grow-1 d-flex justify-content-around">
+
+                        <ul class="navbar-nav flex-grow-1">
+                         <li class="nav-item">
+                            <a class="nav-link text-white h5" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+
+                           @if (User.Identity.IsAuthenticated)
+                                    {
+                         <li class="nav-item">
+                            <a class="nav-link text-white h5" asp-area="" asp-controller="Reports" asp-action="Index">Reports</a>
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link text-white h5" asp-area="" asp-controller="Sockets" asp-action="Index">Your Preferences</a>
+                        </li>
+                       
+                        }
+                         <li class="nav-item">
+                            <a class="nav-link text-white h5" asp-area="" asp-controller="About" asp-action="Index">About Us</a>
+                        </li>
+                                                 <li class="nav-item">
+                            <a class="nav-link text-white h5" asp-area="" asp-controller="Contact" asp-action="Index">Contact</a>
+                        </li>
+                        </ul>
+
+                        <ul class="navbar-nav flex-grow-1 d-flex justify-content-end">
+                        
+                              @if (User.Identity.IsAuthenticated)
+                                    {
+                            <li class="nav-item"><a class="nav-link text-white h5" asp-controller="Account" asp-action="Logout">@User.Identity.Name-Logout</a> </li>
+                                    }
+                                    else{
+                        <li class="nav-item"><a class="nav-link text-white h5" asp-controller="Account" asp-action="Login">Login</a> </li>
+                        <li class="nav-item"><a class="nav-link text-white h5" asp-controller="Account" asp-action="Register">Register</a> </li>
+                                    }
+                    </ul>
+                    </ul>
+                </div>
+                <div class="header-top">
+                    <div class="container">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-8 col-sm-8 col-xs-12">
+                                </div>
+                                <div class="col-md-4 col-sm-4 col-xs-12">
+                                    <div class="header-top-right text-right">
+                                        <ul>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="d-flex flex-column mt-5">
+            @RenderBody()
+        </main>
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
